@@ -1,0 +1,27 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+spring:
+  application:
+    name: microservice-template
+  profiles:
+    active: dev
+
+# Spring Boot Actuator (Health Checks)
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always
+      show-components: always
+
+# Logging
+logging:
+  level:
+    com.ova.platform: DEBUG
+    org.springframework.web: INFO
